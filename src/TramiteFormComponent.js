@@ -52,8 +52,11 @@ const TramiteFormComponent = () => {
                             required
                         >
                             <option value="">Seleccionar tipo de trámite</option>
-                            <option value="Tipo1">Tipo 1</option>
-                            <option value="Tipo2">Tipo 2</option>
+                            <option value="Ratificación de docentes">Ratificación de docentes</option>
+                            <option value="Comisión de servicio por 10 días">Comisión de servicio por 10 días</option>
+                            <option value="Contratación de docentes">Contratación de docentes</option>
+                            <option value="Renovación de contrato">Renovación de contrato</option>
+                            <option value="Licencia por enfermedad, accidente u otra causa">Licencia por enfermedad, accidente u otra causa</option>
                             {/* Agrega más opciones según sea necesario */}
                         </select>
                     </div>
