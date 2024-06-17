@@ -21,7 +21,7 @@ const TramiteFormComponent = () => {
             });
 
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:5000/api/tramites', formData, {
+            await axios.post('http://164.68.101.193:5150/api/tramites', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`

@@ -11,7 +11,7 @@ const TramiteListComponent = () => {
     useEffect(() => {
         const fetchTramites = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/tramites', {
+                const response = await axios.get('http://164.68.101.193:5150/api/tramites', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -27,7 +27,7 @@ const TramiteListComponent = () => {
 
     const handleApprove = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/tramites/${id}`, { estado: 'aprobado' }, {
+            await axios.put(`http://164.68.101.193:5150/api/tramites/${id}`, { estado: 'aprobado' }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -40,7 +40,7 @@ const TramiteListComponent = () => {
 
     const handleReject = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/tramites/${id}`, { estado: 'denegado' }, {
+            await axios.put(`http://164.68.101.193:5150/api/tramites/${id}`, { estado: 'denegado' }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -78,7 +78,7 @@ const TramiteListComponent = () => {
                                 <td className="py-2 px-4">{tramite.fecha_nacimiento}</td>
                                 <td className="py-2 px-4">
                                     {tramite.archivos.map((archivo, index) => (
-                                        <a key={index} href={`http://localhost:5000/uploads/${archivo}`} className="text-blue-500 hover:underline block mb-1" download>{archivo}</a>
+                                        <a key={index} href={`http://164.68.101.193:5150/uploads/${archivo}`} className="text-blue-500 hover:underline block mb-1" download>{archivo}</a>
                                     ))}
                                 </td>
                                 <td className="py-2 px-4">{tramite.estado}</td>
