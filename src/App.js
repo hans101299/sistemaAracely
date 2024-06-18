@@ -19,7 +19,6 @@ const App = () => {
     return (
         <Router>
             <div className="App">
-                <h1>Formulario de Trámite</h1>
                 <Routes>
                     <Route path="/login" element={<LoginComponent />} />
                     <Route path="/form" element={<PrivateRoute><TramiteFormComponent /></PrivateRoute>} />

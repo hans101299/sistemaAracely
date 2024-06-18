@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
 const LoginComponent = () => {
     const [username, setUsername] = useState('');
@@ -10,12 +11,17 @@ const LoginComponent = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://164.68.101.193:5150/api/login', {
+            const response = await axios.post('http://localhost:5000/api/login', {
                 username,
                 password
             });
             localStorage.setItem('token', response.data.access_token);
-            navigate('/form');
+            if (jwtDecode(response.data.access_token).sub.role === 'usuario'){
+                navigate('/form');
+            }
+            else{
+                navigate('/tramites');
+            }
         } catch (error) {
             console.error('Error al iniciar sesión', error);
         }
